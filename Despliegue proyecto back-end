@@ -1,0 +1,15 @@
+1) Instalar la versión de NPM 10.5.2
+2) Instalar la versión de NODE v20.9.0
+3) Se puede instalar NVM para que se puedan cambiar y usar diferentes opciones de node (OPCIONAL)
+4) Descargar la rama dev del proyecto asuncion-backend
+5) Ejecutar el comando npm i
+6) Agregar el archivo .env a la carpeta principal del proyecto
+6) En caso de que la base de datos postgres este deplegada en el mismo servidor cambiar los siguientes parametros del archivo .env:
+  * MS_AUTORIZACION_HOST = 'localhost'
+  * MS_ADMINISTRACION_HOST  = 'localhost'
+7) Para cofiguración de la base de datos de mongo cambiar el parametro del archivo .env
+  * DB_MONGO_HOST = 'localhost'
+8) Para funcionamiento de auditoria se debe crear una base de datos llamada 'api-bsc' y una colección llamada 'auditAdministracion'
+9) Para iniciar el api-gateway ejecutar: npm run start:dev api-gateway
+10) Para iniciar el ms-autorizacion ejecutar: npm run start:dev ms-autorizacion
+11) Para iniciar el ms-administracion ejecutar: npm run start:dev ms-administracion
