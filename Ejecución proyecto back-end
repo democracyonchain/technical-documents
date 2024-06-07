@@ -1,3 +1,4 @@
+******** Instalación de paquetes y configuraciones de funcionamiento *******
 1) Instalar la versión de NPM 10.5.2
 2) Instalar la versión de NODE v20.9.0
 3) Se puede instalar NVM para que se puedan cambiar y usar diferentes opciones de node (OPCIONAL)
@@ -10,6 +11,38 @@
 7) Para cofiguración de la base de datos de mongo cambiar el parametro del archivo .env
   * DB_MONGO_HOST = 'localhost'
 8) Para funcionamiento de auditoria se debe crear una base de datos llamada 'api-bsc' y una colección llamada 'auditAdministracion'
-9) Para iniciar el api-gateway ejecutar: npm run start:dev api-gateway
-10) Para iniciar el ms-autorizacion ejecutar: npm run start:dev ms-autorizacion
-11) Para iniciar el ms-administracion ejecutar: npm run start:dev ms-administracion
+
+************** Despliegue utilizando NPM *****************
+1) Para iniciar el api-gateway ejecutar: npm run start:dev api-gateway
+2) Para iniciar el ms-autorizacion ejecutar: npm run start:dev ms-autorizacion
+4) Para iniciar el ms-administracion ejecutar: npm run start:dev ms-administracion
+
+************** Despliegue utilizando PM2 *****************
+1) Instalar pm2 en el sistema operativo
+2) En la raiz del proyecto ejecutar el comando: npm run build:all
+2) En la raiz del proyecto ejecutar el comando: pm2 start pm2.json
+3) Para saber el status de los microservicios ejecutar el comando : pm2 list
+4) Para detener un microservicio ejecutar el comando: pm2 stop id_micro_servicio
+5) Para elimnar el despliegue e un microservicio ejecutar el comando: pm2 delete id_micro_servicio
+6) Para eliminar todo el despliegue con pm2 ejecutar el comando: pm2 delete all
+
+************** Despliegue utilizando DOCKER *****************
+1) Cambiar las siguientes variables del archivo .env:
+   * DB_BSC_HOST='IP_DEL_SERVIDOR'
+   * DB_MONGO_HOST='IP_DEL_SERVIDOR'
+   **NOTA**: Si es ambienete local donde se despliega poner la ip actual de la computadora
+2) En el archivo mongod.conf
+   * Comentar la linea bindIp: 127.0.0.1
+   * Agregar en su lugar bindIpAll: true
+   ** NOTA**: Se debe mantener la indentación del archivo
+3) En el archivo postgresql.conf agregar listen_addresses = '*'
+4) En el archivo pg_hba.conf agregar:
+   * host    all             all             0.0.0.0/0               md5
+   * host    all             all             ::/0                    md5
+5) En la raiz del proyecto ejecutar docker compose up -d --build
+6) Para verificar que se haya creado la imagen y el contender ejecutar docker ps-a
+7) Para detener el contenedor docker stop id_contenedor
+8) Para eliminar el contender docker rm id_contenedor
+9) Listar imagenes docker images
+10) Eliminar imagen docker rmi id_imagen
+
