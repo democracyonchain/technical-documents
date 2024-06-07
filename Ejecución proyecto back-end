@@ -46,3 +46,5 @@
 9) Listar imagenes docker images
 10) Eliminar imagen docker rmi id_imagen
 
+
+**NOTA**: SE RECOMIENDA QUE PARA AMBIENTE DE PRODUCCIÓN SE DESPLIEGUE CON PM2
