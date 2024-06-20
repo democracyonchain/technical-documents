@@ -45,6 +45,9 @@
 8) Para eliminar el contender docker rm id_contenedor
 9) Listar imagenes docker images
 10) Eliminar imagen docker rmi id_imagen
+11) Para configurar las bases de datos de postgres y mongo se debe primero verificar si se crearon los contenedores con docker ps -a
+12) Para saber con que ip se esta desplegando el contenedor se debe ejecutar docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' id_contenedor
+13) Una vez sabiendo la IP se debe descargar un programa gestor de base de datos y crear las respectivas conexiones
 
 
 **NOTA**: SE RECOMIENDA QUE PARA AMBIENTE DE PRODUCCIÓN SE DESPLIEGUE CON PM2
