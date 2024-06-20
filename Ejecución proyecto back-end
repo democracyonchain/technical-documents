@@ -10,7 +10,7 @@
   * MS_ADMINISTRACION_HOST  = 'localhost'
 7) Para cofiguración de la base de datos de mongo cambiar el parametro del archivo .env
   * DB_MONGO_HOST = 'localhost'
-8) Para funcionamiento de auditoria se debe crear una base de datos llamada 'api-bsc' y una colección llamada 'auditAdministracion'
+8) Para funcionamiento de auditoria se debe crear una base de datos llamada 'api-bsc' y las colecciones: 'auditAdministracion','auditAutorizacion'
 
 ************** Despliegue utilizando NPM *****************
 1) Para iniciar el api-gateway ejecutar: npm run start:dev api-gateway
