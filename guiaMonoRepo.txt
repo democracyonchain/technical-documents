@@ -1,0 +1,47 @@
+Guia de Instalación Microfront
+
+- Pre-requisitos
+
+	Node js: 18.13.0 LTS
+	Npm: 8.19.3
+	yarn
+	Lerna
+	single-spa 4.1.3
+
+
+	Instalar lerna Lerna (https://lerna.js.org/)
+	$ yarn global add lerna
+	
+	
+	Instalar spa-simple framework https://single-spa.js.org/
+	$ yarn global add create-single-spa
+	
+	Instalar las dependencias del proyecto
+	yarn bootstrap
+
+- Iniciar Lerna.
+	- lerna init
+	- npm config set force false
+- Crear una nueva aplicación (Ejemplo: App de mantenimientos)
+
+	1.- Crear
+
+	$ npx create-single-spa
+	
+	2.- Contestar la siguientes preguntas:
+		- Directory for new project packages/app-root
+ 		- Select type to generate
+	 		- single-spa application / parcel 
+  			- in-browser utility module (styleguide, api cache, etc) 
+	  		- single-spa root config 
+  		- Which package manager do you want to use? 
+  			- npm /
+  			- yarn 
+  			- pnpm
+
+ 		- Will this project use Typescript? (y/N)
+ 			- Y 
+		- Would you like to use single-spa Layout Engine
+			- Y 
+		- Organization name
+			- bsc

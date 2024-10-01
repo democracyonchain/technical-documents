@@ -1,0 +1,51 @@
+/*
+ * Publicar al servidor --DEV
+ */
+
+> Pasos para desplegar un Microfront-End:
+
+	- Probar y compilar el código de la aplicación (build , test, lint, store artifacts)
+	- Subir al servidor los archivos estáticos
+	- Actualizar la rutas de las nuevas librerías JavaScript ( import map)
+
+
+> Compilar el código de la aplicación
+	- Es recomendable borrar el código compilado durante el desarrollo y las pruebas.
+	- Borrar las dependencias y descargar nuevamente
+		$ yarn clean
+	- Compilar el ccódigo
+		$ yarn build:dev
+
+
+
+> Subir al servidor los archivos estáticos
+	- Para automatizar la carga de los archivos estáticos al repositorio gitlab se requiere almacenar las credenciales en la computadora local.
+	- Los siguientes comandos se puede utilizar en un ambiente de Linux.
+
+	# Cache por una hora
+		git config --global credential.helper "cache --timeout=3600"
+
+	# Cache por un dia
+		git config --global credential.helper "cache --timeout=86400"
+
+	# Cache por una semana
+		git config --global credential.helper "cache --timeout=604800"
+
+
+> Comando la subir los archivos estáticos al Gitlab
+
+	- $ yarn deploy:dev
+
+> Ramas utilizadas para desplegar de acuerdo al entorno
+
+	- static_dev
+	- static_test
+	- static_prod
+
+
+> Actualizar la rutas de las nuevas librerías JavaScript
+	-Existen un archivo donde se actualizan estas librerías en la raíz de la aplicación de acuerdo al entorno
+
+	- importmap.dev.json
+	- importmap.test.json
+	- importmap.prod.json

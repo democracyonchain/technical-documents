@@ -1,0 +1,17 @@
+/*
+ * Guía de Intalación FrontEnd
+ * Fecha: 06/08/2024
+ *
+ */ 
+
+- [x] Instalar Node 18.1 => sudo apt install nodejs
+- [x] Instalar Yarn => npm install --global yarn
+- [x] Instalar Lerna => yarn global add lerna@6.6.2
+	
+- [x] Clonar el repositorio
+	- git clone -b dev https://github.com/democracyonchain/asuncion-frontend.git
+- [x] Instalar dependencias, en la carpera asuncion-frontend/  ===> npm i
+- [x] Ejecución de la Aplicación
+	- yarn start:local
+	
+- [x] http://localhost:9000/
